@@ -1,37 +1,39 @@
+alert("Hello world you are welcomed to ZENODICE GAME.")
+var username = prompt("what is your name player 1");
+var username1 = prompt("What is your name player 2")
 
-var randomNumber1 = Math.floor(Math.random() * 6) + 1; //1-6
 
-var randomDiceImage = "dice" + randomNumber1 + ".png"; //dice1.png - dice6.png
+var randomNumber1 = Math.floor(Math.random() * 6 ) + 1;
 
-var randomImageSource = "images/" + randomDiceImage; //images/dice1.png - images/dice6.png
+var randimDiceImage = "dice" + randomNumber1 + ".png";
+
+var randomImageSource = "./images/" + randimDiceImage;
 
 var image1 = document.querySelectorAll("img")[0];
-
+ 
 image1.setAttribute("src", randomImageSource);
 
 
-var randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
+var randomNumber2 = Math.floor(Math.random() * 6) + 1;
 var randomImageSource2 = "images/dice" + randomNumber2 + ".png";
 
 document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
 
 
-//If player 1 wins
+
+
 if (randomNumber1 > randomNumber2) {
-  document.querySelector("h1").innerHTML = "🚩 Player 1 Wins!";
-
+    document.querySelector("h1").innerHTML = "🏆WON🥇...Player 1 wins🎮.";
+    alert("Nice game by " + username );
+}else if (randomNumber2 > randomNumber1) {
+    document.querySelector("h1").innerHTML = "🏆WON🥇...Player 2 wins🎮.";
+    alert("Nice game by " + username1);
+} else {
+    document.querySelector("h1").innerHTML = "DRAW..... Game replay🎮.";
 }
-else if (randomNumber2 > randomNumber1) {
-  document.querySelector("h1").innerHTML = "Player 2 Wins! 🚩"; 
-
- }
-
-else {
-  document.querySelector("h1").innerHTML = "Draw!";
- }
 
 
- var username = prompt("What are your names please?");
- alert("Thanks " + username + " for playing my game.")
- alert("ZIECO says GOODBYE SEE YOU NEXT TIME " + username + ".")
+
+
+alert(" Refresh me and keep playing.");
